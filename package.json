@@ -6,10 +6,27 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "tinyjin",
-  "license": "MIT",
+  "author": {
+    "name": "tinyjin",
+    "email": "baram991103@gmail.com",
+    "url": "https://wlsdml1103.blog.me"
+  },
+  "license": "GPLv3",
+  "homepage": "https://github.com/tinyjin/koun-crawler",
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
     "request": "^2.88.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tinyjin/koun-crawler.git"
+  },
+  "keywords": [
+    "한국어",
+    "형태소",
+    "분석",
+    "nlp",
+    "korean",
+    "crawler"
+  ]
 }
