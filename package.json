@@ -1,7 +1,7 @@
 {
-  "name": "korean-crawler",
+  "name": "koun-crawler",
   "version": "1.0.0",
-  "description": "",
+  "description": "Crawl korean nouns from any link.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

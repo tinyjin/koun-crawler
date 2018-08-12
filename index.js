@@ -2,15 +2,14 @@ const request = require('request');
 const cheerio = require('cheerio');
 const extractNoun = require('./extract-noun');
 
-class TextCrawler {
+class KounCrawler {
 
   static start(link, callback) {
     let noun = [];
 
     request(link, (err, res, body) => {
       if (err) {
-        console.log(err);
-        return callback();
+        return callback(err);
       }
 
       const $ = cheerio.load(body);
@@ -24,7 +23,9 @@ class TextCrawler {
       });
 
       extractNoun(noun, (err, res) => {
-        if (err) callback(err);
+        if (err) {
+          callback(err);
+        }
 
         callback(null, res);
       });
@@ -42,4 +43,12 @@ class TextCrawler {
 
 }
 
-module.exports = TextCrawler;
+const koun = (link, callback) => {
+  KounCrawler.start(link, (err, res) => {
+    if (err) callback(err);
+    
+    callback(null, res);
+  });
+}
+
+module.exports = koun;
