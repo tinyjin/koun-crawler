@@ -24,7 +24,7 @@ class KounCrawler {
 
       extractNoun(noun, (err, res) => {
         if (err) {
-          callback(err);
+          return callback(err);
         }
 
         callback(null, res);
@@ -45,7 +45,9 @@ class KounCrawler {
 
 const koun = (link, callback) => {
   KounCrawler.start(link, (err, res) => {
-    if (err) callback(err);
+    if (err) {
+      return callback(err);
+    }
     
     callback(null, res);
   });
